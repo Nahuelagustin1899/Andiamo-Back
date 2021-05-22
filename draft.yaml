@@ -1,0 +1,35 @@
+models:
+  Usuario:
+    email: string:190
+    password: string
+    rol: integer
+  Empresa: 
+    nombre: string:30
+    logo: string nullable
+    informacion: string
+    relationships:
+      hasMany: Viaje
+  Estacion:
+    nombre: string
+    relationships:
+      hasMany: Viaje
+  Viaje:
+    usuario_id: id
+    empresa_id: id
+    salida_id: id:estacion
+    destino_id: id:estacion 
+    fecha_salida: timestamp nullable
+    fecha_llegada: timestamp nullable
+    cantidad_asientos: integer
+    precio: decimal:10,2
+  Asiento:
+    estado: boolean default:false
+    tipo: integer
+  Reserva:
+    estado: boolean default:false
+    asiento_id: id
+    viaje_id: id
+  
+  
+    
+    
