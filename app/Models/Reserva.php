@@ -24,18 +24,24 @@ class Reserva extends Model
     protected $casts = [
         'id' => 'integer',
         'estado' => 'boolean',
-        'asiento_id' => 'integer',
         'viaje_id' => 'integer',
+        'usuario_id' => 'integer',
+        'asiento_id' => 'integer',
     ];
 
-
-    public function asiento()
-    {
-        return $this->belongsTo(\App\Models\Asiento::class);
-    }
 
     public function viaje()
     {
         return $this->belongsTo(\App\Models\Viaje::class);
+    }
+
+    public function usuario()
+    {
+        return $this->belongsTo(\App\Models\Usuario::class);
+    }
+
+    public function asiento()
+    {
+        return $this->belongsTo(\App\Models\Asiento::class);
     }
 }

@@ -17,7 +17,6 @@ class CreateViajesTable extends Migration
 
         Schema::create('viajes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('usuario_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('empresa_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('salida_id')->constrained('estacions')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('destino_id')->constrained('estacions')->cascadeOnDelete()->cascadeOnUpdate();

@@ -16,6 +16,8 @@ class Viaje extends Model
      */
     protected $guarded = [];
 
+    protected $with = ['empresa', 'salida', 'destino'];
+
     /**
      * The attributes that should be cast to native types.
      *
@@ -23,7 +25,6 @@ class Viaje extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'usuario_id' => 'integer',
         'empresa_id' => 'integer',
         'salida_id' => 'integer',
         'destino_id' => 'integer',
@@ -32,11 +33,6 @@ class Viaje extends Model
         'precio' => 'decimal:2',
     ];
 
-
-    public function usuario()
-    {
-        return $this->belongsTo(\App\Models\Usuario::class);
-    }
 
     public function empresa()
     {

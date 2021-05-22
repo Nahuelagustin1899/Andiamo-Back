@@ -14,7 +14,6 @@ models:
     relationships:
       hasMany: Viaje
   Viaje:
-    usuario_id: id
     empresa_id: id
     salida_id: id:estacion
     destino_id: id:estacion 
@@ -25,10 +24,12 @@ models:
   Asiento:
     estado: boolean default:false
     tipo: integer
+    numero: integer
   Reserva:
     estado: boolean default:false
-    asiento_id: id
     viaje_id: id
+    usuario_id: id
+    asiento_id: id
   
   
     

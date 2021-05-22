@@ -25,6 +25,7 @@ class AsientoFactory extends Factory
         return [
             'estado' => $this->faker->boolean,
             'tipo' => $this->faker->numberBetween(-10000, 10000),
+            'numero' => $this->faker->numberBetween(-10000, 10000),
         ];
     }
 }

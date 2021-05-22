@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Empresa;
 use App\Models\Estacion;
-use App\Models\Usuario;
 use App\Models\Viaje;
 
 class ViajeFactory extends Factory
@@ -26,7 +25,6 @@ class ViajeFactory extends Factory
     public function definition()
     {
         return [
-            'usuario_id' => Usuario::factory(),
             'empresa_id' => Empresa::factory(),
             'salida_id' => Estacion::factory(),
             'destino_id' => Estacion::factory(),

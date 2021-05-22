@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Asiento;
 use App\Models\Reserva;
+use App\Models\Usuario;
 use App\Models\Viaje;
 
 class ReservaFactory extends Factory
@@ -26,8 +27,9 @@ class ReservaFactory extends Factory
     {
         return [
             'estado' => $this->faker->boolean,
-            'asiento_id' => Asiento::factory(),
             'viaje_id' => Viaje::factory(),
+            'usuario_id' => Usuario::factory(),
+            'asiento_id' => Asiento::factory(),
         ];
     }
 }

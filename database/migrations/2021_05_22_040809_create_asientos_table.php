@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReservasTable extends Migration
+class CreateAsientosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,11 @@ class CreateReservasTable extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::create('reservas', function (Blueprint $table) {
+        Schema::create('asientos', function (Blueprint $table) {
             $table->id();
             $table->boolean('estado')->default(false);
-            $table->foreignId('asiento_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('viaje_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->integer('tipo');
+            $table->integer('numero');
             $table->timestamps();
         });
 
@@ -33,6 +33,6 @@ class CreateReservasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reservas');
+        Schema::dropIfExists('asientos');
     }
 }
