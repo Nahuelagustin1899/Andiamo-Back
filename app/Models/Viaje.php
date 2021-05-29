@@ -16,7 +16,7 @@ class Viaje extends Model
      */
     protected $guarded = [];
 
-    protected $with = ['empresa', 'salida', 'destino'];
+    protected $with = ['empresa','salida', 'destino'];
 
     /**
      * The attributes that should be cast to native types.

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateEstacionsTable extends Migration
+class CreateEmpresasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,17 @@ class CreateEstacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('estacions', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('empresas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
+            $table->string('nombre', 30);
+            $table->string('logo')->nullable();
+            $table->string('informacion');
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -27,6 +33,6 @@ class CreateEstacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('estacions');
+        Schema::dropIfExists('empresas');
     }
 }

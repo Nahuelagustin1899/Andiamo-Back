@@ -1,17 +1,20 @@
 created:
     - database/factories/UsuarioFactory.php
+    - database/factories/RolFactory.php
     - database/factories/EmpresaFactory.php
     - database/factories/EstacionFactory.php
     - database/factories/ViajeFactory.php
     - database/factories/AsientoFactory.php
     - database/factories/ReservaFactory.php
-    - database/migrations/2021_05_22_040805_create_usuarios_table.php
-    - database/migrations/2021_05_22_040806_create_empresas_table.php
-    - database/migrations/2021_05_22_040807_create_estacions_table.php
-    - database/migrations/2021_05_22_040808_create_viajes_table.php
-    - database/migrations/2021_05_22_040809_create_asientos_table.php
-    - database/migrations/2021_05_22_040810_create_reservas_table.php
+    - database/migrations/2021_05_26_030102_create_usuarios_table.php
+    - database/migrations/2021_05_26_030103_create_rols_table.php
+    - database/migrations/2021_05_26_030104_create_empresas_table.php
+    - database/migrations/2021_05_26_030105_create_estacions_table.php
+    - database/migrations/2021_05_26_030106_create_viajes_table.php
+    - database/migrations/2021_05_26_030107_create_asientos_table.php
+    - database/migrations/2021_05_26_030108_create_reservas_table.php
     - app/Models/Usuario.php
+    - app/Models/Rol.php
     - app/Models/Empresa.php
     - app/Models/Estacion.php
     - app/Models/Viaje.php
@@ -19,7 +22,8 @@ created:
     - app/Models/Reserva.php
 models:
     Models\User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
-    Usuario: { email: 'string:190', password: string, rol: integer }
+    Usuario: { email: 'string:190', password: string, rol_id: id }
+    Rol: { rol: integer }
     Empresa: { nombre: 'string:30', logo: 'string nullable', informacion: string, relationships: { hasMany: Viaje } }
     Estacion: { nombre: string, relationships: { hasMany: Viaje } }
     Viaje: { empresa_id: id, salida_id: 'id:estacion', destino_id: 'id:estacion', fecha_salida: 'timestamp nullable', fecha_llegada: 'timestamp nullable', cantidad_asientos: integer, precio: 'decimal:10,2' }

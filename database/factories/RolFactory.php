@@ -5,16 +5,15 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Rol;
-use App\Models\Usuario;
 
-class UsuarioFactory extends Factory
+class RolFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Usuario::class;
+    protected $model = Rol::class;
 
     /**
      * Define the model's default state.
@@ -24,9 +23,7 @@ class UsuarioFactory extends Factory
     public function definition()
     {
         return [
-            'email' => $this->faker->safeEmail,
-            'password' => $this->faker->password,
-            'rol_id' => Rol::factory(),
+            'rol' => $this->faker->numberBetween(-10000, 10000),
         ];
     }
 }

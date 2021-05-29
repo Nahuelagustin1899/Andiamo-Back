@@ -64,14 +64,19 @@ Route::put('/reserva/change', [ReservaController::class, 'change'])
 
 /* AUTH */
 
+Route::post('/auth/login', [AuthController::class, 'login'])
+    ->name('auth-login');
 
+Route::post('/auth/logout', [AuthController::class, 'logout'])
+    ->name('auth-logout');
+/* 
 Route::prefix('auth')
     ->group(function() {
         Route::post('login', 'AuthController@login')
             ->name('auth.login');
         Route::post('logout', 'AuthController@logout')
             ->name('auth.logout');
-    });
+    }); */
 
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

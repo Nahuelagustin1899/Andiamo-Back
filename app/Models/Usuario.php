@@ -33,4 +33,10 @@ class Usuario extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+
+    public function rol()
+    {
+        return $this->belongsTo(\App\Models\Rol::class);
+    }
 }
