@@ -6,7 +6,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\EstacionController;
 use App\Http\Controllers\ViajeController;
 use App\Http\Controllers\ReservaController;
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -64,21 +64,11 @@ Route::put('/reserva/change', [ReservaController::class, 'change'])
 
 /* AUTH */
 
-Route::post('/auth/login', [AuthController::class, 'login'])
-    ->name('auth-login');
+Route::post('register',[UserController::class, 'register']);
 
-Route::post('/auth/logout', [AuthController::class, 'logout'])
-    ->name('auth-logout');
-/* 
-Route::prefix('auth')
-    ->group(function() {
-        Route::post('login', 'AuthController@login')
-            ->name('auth.login');
-        Route::post('logout', 'AuthController@logout')
-            ->name('auth.logout');
-    }); */
+Route::post('login', [UserController::class, 'authenticate');
 
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => ['jwt.verify']], function() {
+    /*AÑADE AQUI LAS RUTAS QUE QUIERAS PROTEGER CON JWT*/
 });
+
