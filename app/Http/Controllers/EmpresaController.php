@@ -10,12 +10,26 @@ use Intervention\Image\Facades\Image;
 
 class EmpresaController extends Controller
 {
+    /**
+    *@param null
+    *@method retorna todas las empresas
+    *@return json
+    *@author
+    *28-05-2021
+    */
     public function index()
     {
         $empresas = Empresa::all();
         return response()->json($empresas, 200);
     }
 
+    /**
+    *@param id empresa
+    *@method elimina una empresa en especifico
+    *@return json
+    *@author
+    *28-05-2021
+    */
     public function delete($id)
     {
         $empresa = Empresa::findOrFail($id);
@@ -26,6 +40,13 @@ class EmpresaController extends Controller
 
     }
 
+    /**
+    *@param Request
+    *@method Guarda una empresa, nombre informacion y logo
+    *@return json
+    *@author
+    *28-05-2021
+    */
     public function store(Request $request)
     {
         $request->validate([

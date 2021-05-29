@@ -17,10 +17,9 @@ class CreateReservasTable extends Migration
 
         Schema::create('reservas', function (Blueprint $table) {
             $table->id();
-            $table->boolean('estado')->default(false);
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('viaje_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('usuario_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('asiento_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->boolean('estado')->default(false);
             $table->timestamps();
         });
 

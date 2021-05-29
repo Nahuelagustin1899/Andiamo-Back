@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Empresa;
-use App\Models\Estacion;
+use App\Models\Estacions;
 use App\Models\Viaje;
 
 class ViajeFactory extends Factory
@@ -26,8 +26,8 @@ class ViajeFactory extends Factory
     {
         return [
             'empresa_id' => Empresa::factory(),
-            'salida_id' => Estacion::factory(),
-            'destino_id' => Estacion::factory(),
+            'salida_id' => Estacions::factory(),
+            'destino_id' => Estacions::factory(),
             'fecha_salida' => $this->faker->dateTime(),
             'fecha_llegada' => $this->faker->dateTime(),
             'cantidad_asientos' => $this->faker->numberBetween(-10000, 10000),

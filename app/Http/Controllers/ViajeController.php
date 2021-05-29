@@ -16,11 +16,17 @@ class ViajeController extends Controller
 
     public function store(ViajeRequest $request)
     {
-        
-        $data = $request->all();
 
-        $viaje = Viaje::create($data);
-    
+        $viaje = Viaje::create([
+            'empresa_id' => $request->empresa_id,
+            'salida_id' => $request->salida_id,
+            'destino_id' => $request->destino_id,
+            'fecha_salida' => $request->fecha_salida,
+            'fecha_llegada' => $request->fecha_llegada,
+            'cantidad_asientos' => $request->cantidad_asientos,
+            'precio' => $request->precio,
+        ]);
+
         return response()->json($viaje, 201);
     }
 

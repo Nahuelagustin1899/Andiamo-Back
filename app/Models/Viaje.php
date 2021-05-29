@@ -16,8 +16,6 @@ class Viaje extends Model
      */
     protected $guarded = [];
 
-    protected $with = ['empresa','salida', 'destino'];
-
     /**
      * The attributes that should be cast to native types.
      *
@@ -41,11 +39,11 @@ class Viaje extends Model
 
     public function salida()
     {
-        return $this->belongsTo(\App\Models\Estacion::class);
+        return $this->belongsTo(\App\Models\Estacions::class);
     }
 
     public function destino()
     {
-        return $this->belongsTo(\App\Models\Estacion::class);
+        return $this->belongsTo(\App\Models\Estacions::class);
     }
 }

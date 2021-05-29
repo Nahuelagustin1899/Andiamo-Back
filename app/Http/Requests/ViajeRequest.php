@@ -24,13 +24,13 @@ class ViajeRequest extends FormRequest
     public function rules()
     {
         return [
-            'destino_id' => 'required|exists:estacions',
-            'salida_id' => 'required|exists:estacions',
-            'empresa_id' => 'required|exists:empresas', 
+            'destino_id' => 'required|exists:estacions,id',
+            'salida_id' => 'required|exists:estacions,id',
+            'empresa_id' => 'required|exists:empresas,id', 
             'nombre' => 'required|min:2|max:40',
             'precio' => 'required|numeric',
             'fecha_salida' => 'required',
-            'fecha_llegada' => 'required, 
+            'fecha_llegada' => 'required', 
         ];
     }
 }

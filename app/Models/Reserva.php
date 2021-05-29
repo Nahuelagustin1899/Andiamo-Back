@@ -23,25 +23,34 @@ class Reserva extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'estado' => 'boolean',
+        'user_id' => 'integer',
         'viaje_id' => 'integer',
-        'usuario_id' => 'integer',
-        'asiento_id' => 'integer',
+        'estado' => 'boolean',
     ];
 
+
+    public function usuarios()
+    {
+        return $this->hasMany(\App\Models\Usuario::class);
+    }
+
+    public function viajes()
+    {
+        return $this->hasMany(\App\Models\Viaje::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(\App\Models\User::class);
+    }
 
     public function viaje()
     {
         return $this->belongsTo(\App\Models\Viaje::class);
     }
 
-    public function usuario()
-    {
-        return $this->belongsTo(\App\Models\Usuario::class);
+    public function scopeAllReservas($query){
+        
     }
 
-    public function asiento()
-    {
-        return $this->belongsTo(\App\Models\Asiento::class);
-    }
 }

@@ -4,9 +4,8 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Asiento;
 use App\Models\Reserva;
-use App\Models\Usuario;
+use App\Models\User;
 use App\Models\Viaje;
 
 class ReservaFactory extends Factory
@@ -26,10 +25,9 @@ class ReservaFactory extends Factory
     public function definition()
     {
         return [
-            'estado' => $this->faker->boolean,
+            'user_id' => User::factory(),
             'viaje_id' => Viaje::factory(),
-            'usuario_id' => Usuario::factory(),
-            'asiento_id' => Asiento::factory(),
+            'estado' => $this->faker->boolean,
         ];
     }
 }
