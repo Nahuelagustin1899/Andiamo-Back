@@ -26,6 +26,7 @@ use App\Http\Controllers\UserController;
 Route::get('/empresa/index', [EmpresaController::class, 'index'])
     ->name('empresa-index');
 
+
 Route::delete('/empresa/{id}', [EmpresaController::class, 'delete'])
     ->name('empresa-delete');
 
@@ -64,11 +65,10 @@ Route::put('/reserva/change', [ReservaController::class, 'change'])
 
 /* AUTH */
 
-Route::post('register',[UserController::class, 'register']);
+/* Route::post('register',[UserController::class, 'register']);
 
 Route::post('login', [UserController::class, 'authenticate');
 
 Route::group(['middleware' => ['jwt.verify']], function() {
-    /*AÑADE AQUI LAS RUTAS QUE QUIERAS PROTEGER CON JWT*/
 });
-
+ */

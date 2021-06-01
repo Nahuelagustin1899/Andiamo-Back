@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Empresa;
 use App\Helpers\File;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
 
@@ -20,7 +21,7 @@ class EmpresaController extends Controller
     public function index()
     {
         $empresas = Empresa::all();
-        return response()->json($empresas, 200);
+        return response()->json(['data' => $empresas]);
     }
 
     /**
@@ -36,7 +37,7 @@ class EmpresaController extends Controller
 
         $empresa->delete();
 
-        return response()->json($empresa, 200);
+        return response()->json(['success' => true,'data' => $empresa]);
 
     }
 
@@ -55,6 +56,7 @@ class EmpresaController extends Controller
 
         ]);
 
+
         $data = $request->all();
 
         if(!empty($data['logo'])) {
@@ -69,7 +71,10 @@ class EmpresaController extends Controller
 
         $empresa = Empresa::create($data);
 
-        return response()->json($empresa, 201);
+        return response()->json([
+            'success' => true,
+            'data' => $empresa
+        ]);
     }
 
     
