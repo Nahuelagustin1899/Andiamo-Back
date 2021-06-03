@@ -26,7 +26,6 @@ use App\Http\Controllers\UserController;
 Route::get('/empresa/index', [EmpresaController::class, 'index'])
     ->name('empresa-index');
 
-
 Route::delete('/empresa/{id}', [EmpresaController::class, 'delete'])
     ->name('empresa-delete');
 
@@ -42,6 +41,9 @@ Route::get('/estacion/index', [EstacionController::class, 'index'])
 
 Route::get('/viaje/index', [ViajeController::class, 'index'])
     ->name('viaje-index');
+
+Route::get('/viaje/index/empresa', [ViajeController::class, 'indexEmpresa'])
+    ->name('viaje-index-empresa');
 
 Route::post('/viaje', [ViajeController::class, 'store'])
     ->name('viaje-store');

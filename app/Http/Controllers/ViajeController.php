@@ -4,30 +4,40 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Viaje;
-use App\Request\ViajeRequest;
+use App\Http\Requests\ViajeRequest;
 
 class ViajeController extends Controller
 {
     public function index()
     {
-        $viajes = Viaje::all();
-        return response()->json($viajes, 200);
+        $viajes = Viaje::with(['empresa', 'destino', 'salida'])->get();
+        return response()->json(['success' => true,'data' => $viajes]);
     }
 
-    public function store(ViajeRequest $request)
+    public function indexEmpresa()
     {
+        $viajes = Viaje::with(['empresa', 'destino', 'salida'])->where('empresa_id', 1)->get();
+        return response()->json(['data' => $viajes]);
+    }
 
-        $viaje = Viaje::create([
-            'empresa_id' => $request->empresa_id,
-            'salida_id' => $request->salida_id,
-            'destino_id' => $request->destino_id,
-            'fecha_salida' => $request->fecha_salida,
-            'fecha_llegada' => $request->fecha_llegada,
-            'cantidad_asientos' => $request->cantidad_asientos,
-            'precio' => $request->precio,
+    public function store(Request $request)
+    {
+        
+        $request->validate([
+            'destino_id' => 'required|exists:estacions,id',
+            'salida_id' => 'required|exists:estacions,id',
+            'empresa_id' => 'required|exists:empresas,id', 
+         /*    'nombre' => 'required|min:2|max:40', */
+            'precio' => 'required|numeric',
+            'fecha_salida' => 'required',
+            'fecha_llegada' => 'required'
         ]);
 
-        return response()->json($viaje, 201);
+
+        $data = $request->all();
+        $empresa = Viaje::create($data);
+
+        return response()->json(['success' => true,'data' => $viaje]);
     }
 
     public function delete($id)
@@ -36,7 +46,7 @@ class ViajeController extends Controller
 
         $viaje->delete();
 
-        return response()->json($viaje, 200);
+        return response()->json(['success' => true, 'data' => $viaje]);
     }
 
     public function show($id)

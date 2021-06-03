@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
+use DateTimeInterface;
 
 class Viaje extends Model
 {
@@ -15,6 +17,8 @@ class Viaje extends Model
      * @var array
      */
     protected $guarded = [];
+
+    protected $with = ['empresa', 'salida', 'destino'];
 
     /**
      * The attributes that should be cast to native types.
@@ -39,11 +43,12 @@ class Viaje extends Model
 
     public function salida()
     {
-        return $this->belongsTo(\App\Models\Estacions::class);
+        return $this->belongsTo(\App\Models\Estacion::class);
     }
 
     public function destino()
     {
-        return $this->belongsTo(\App\Models\Estacions::class);
+        return $this->belongsTo(\App\Models\Estacion::class);
     }
+    
 }
