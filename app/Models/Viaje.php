@@ -30,9 +30,12 @@ class Viaje extends Model
         'empresa_id' => 'integer',
         'salida_id' => 'integer',
         'destino_id' => 'integer',
-        'fecha_salida' => 'timestamp',
-        'fecha_llegada' => 'timestamp',
         'precio' => 'decimal:2',
+    ];
+
+    protected $dates = [
+        'fecha_salida',
+        'fecha_llegada'
     ];
 
 

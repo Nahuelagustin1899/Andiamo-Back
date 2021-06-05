@@ -67,10 +67,18 @@ Route::put('/reserva/change', [ReservaController::class, 'change'])
 
 /* AUTH */
 
-/* Route::post('register',[UserController::class, 'register']);
-
-Route::post('login', [UserController::class, 'authenticate');
-
-Route::group(['middleware' => ['jwt.verify']], function() {
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
- */
+
+Route::prefix('auth')
+    ->group(function() {
+        Route::post('login', [UserController::class, 'login'])
+            ->name('auth.login');
+        Route::post('logout', [UserController::class, 'logout'])
+            ->name('auth.logout');
+    });
+
+
+
+

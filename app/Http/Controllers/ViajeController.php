@@ -18,24 +18,25 @@ class ViajeController extends Controller
     {
         $viajes = Viaje::with(['empresa', 'destino', 'salida'])->where('empresa_id', 1)->get();
         return response()->json(['data' => $viajes]);
+        
     }
 
     public function store(Request $request)
     {
         
-        $request->validate([
+        $validate = $request->validate([
+
             'destino_id' => 'required|exists:estacions,id',
             'salida_id' => 'required|exists:estacions,id',
             'empresa_id' => 'required|exists:empresas,id', 
-         /*    'nombre' => 'required|min:2|max:40', */
+            /* 'nombre' => 'required|min:2|max:40',  */
             'precio' => 'required|numeric',
             'fecha_salida' => 'required',
             'fecha_llegada' => 'required'
-        ]);
-
-
+        ]); 
+         
         $data = $request->all();
-        $empresa = Viaje::create($data);
+        $viaje = Viaje::create($data);
 
         return response()->json(['success' => true,'data' => $viaje]);
     }
