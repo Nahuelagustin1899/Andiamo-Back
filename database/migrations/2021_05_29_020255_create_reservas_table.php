@@ -20,6 +20,7 @@ class CreateReservasTable extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('viaje_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->boolean('estado')->default(false);
+            $table->string('asiento_reservado');
             $table->timestamps();
         });
 

@@ -25,5 +25,17 @@ class ViajesTableSeeder extends Seeder
             'precio' =>3000
 
         ]);
+
+        Viaje::create([
+            'id' => 2,
+            'empresa_id' =>3,
+            'salida_id' =>4,
+            'destino_id' =>5,
+            'fecha_salida' => "2021-10-22 18:18:18",
+            'fecha_llegada' => "2021-11-22 20:20:20",
+            'cantidad_asientos' =>'20',
+            'precio' => 6000
+
+        ]);
     }
 }

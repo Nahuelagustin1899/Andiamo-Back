@@ -64,6 +64,9 @@ Route::post('/reserva/store', [ReservaController::class, 'store'])
 
 Route::put('/reserva/change', [ReservaController::class, 'change'])
     ->name('reserva-change');
+    
+Route::get('/reserva/viajes/{id}', [ReservaController::class, 'reservasViajes'])
+    ->name('reserva-viajes');
 
 /* AUTH */
 
