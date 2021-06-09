@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Viaje;
+use App\Models\Empresa;
+use App\Models\Estacion;
 use App\Http\Requests\ViajeRequest;
 
 class ViajeController extends Controller
@@ -17,6 +19,22 @@ class ViajeController extends Controller
     public function indexEmpresa()
     {
         $viajes = Viaje::with(['empresa', 'destino', 'salida'])->where('empresa_id', 1)->get();
+        return response()->json(['data' => $viajes]);
+        
+    }
+
+    public function indexTraerSelect()
+    {
+        $viajes = Empresa::all();
+
+        return response()->json(['data' => $viajes]);
+        
+    }
+
+    public function indexTraerSelect2()
+    {
+        $viajes = Estacion::all();
+
         return response()->json(['data' => $viajes]);
         
     }

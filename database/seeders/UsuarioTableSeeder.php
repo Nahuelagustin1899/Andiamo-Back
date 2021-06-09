@@ -18,6 +18,7 @@ class UsuarioTableSeeder extends Seeder
         User::create([
             'id' => 1,
             'name' => 'Nahuel Lopez',
+            'logo' => 'chevalier.png',
             'rol' => 1,
             'email' => "nahuel@admin.com",
             'password' => Hash::make('asdasd'),
@@ -26,6 +27,7 @@ class UsuarioTableSeeder extends Seeder
         User::create([
             'id' => 2,
             'name' => 'Ruta Atlántica',
+            'logo' => 'ruta.jpg',
             'rol' => 2,
             'email' => "ruta@atlantica.com",
             'password' => Hash::make('asdasd'),
@@ -33,7 +35,8 @@ class UsuarioTableSeeder extends Seeder
 
         User::create([
             'id' => 3,
-            'name' => 'Carlos Tevez',
+            'name' => 'Carlos Tevez',            
+            'logo' => 'tevez.png',
             'rol' => 3,
             'email' => "carlos@tevez.com",
             'password' => Hash::make('asdasd'),

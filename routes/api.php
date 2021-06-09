@@ -45,6 +45,12 @@ Route::get('/viaje/index', [ViajeController::class, 'index'])
 Route::get('/viaje/index/empresa', [ViajeController::class, 'indexEmpresa'])
     ->name('viaje-index-empresa');
 
+Route::get('/viaje/index/select', [ViajeController::class, 'indexTraerSelect'])
+    ->name('viaje-index-select');
+
+Route::get('/viaje/index/select2', [ViajeController::class, 'indexTraerSelect2'])
+    ->name('viaje-index-select2');
+
 Route::post('/viaje', [ViajeController::class, 'store'])
     ->name('viaje-store');
 

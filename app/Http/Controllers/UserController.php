@@ -39,6 +39,8 @@ class UserController extends Controller
         ])->withCookie('token', null, time() - 3600, '/', null, false, true);
     }
 
+  
+
     public function respondWithToken($token)
     {
         $user = auth()->user();
@@ -51,6 +53,8 @@ class UserController extends Controller
                 'rol' => $user->rol,
                 'email' => $user->email,
                 'name' => $user->name,
+                'logo' => $user->logo,
+
             ]
         
         ])->withCookie('token', $token, auth()->factory()->getTTL() * 60, '/', null, false, true);

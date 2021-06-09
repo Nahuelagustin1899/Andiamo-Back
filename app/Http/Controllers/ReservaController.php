@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\Reserva;
-
 use Illuminate\Http\Request;
+use App\Mail\EnviarDatosViajeMailable;
+use Mail;
 
 class ReservaController extends Controller
 {
@@ -16,7 +17,8 @@ class ReservaController extends Controller
     */
     public function index()
     {   
-        $reservas = Reserva::where('user_id', auth()->id)->get();
+        /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id)->get(); */
+        $reservas = Reserva::with(['user', 'viaje'])->where('user_id', 3)->get();
         return response()->json(['data' => $reservas]);
     }
 
@@ -28,31 +30,23 @@ class ReservaController extends Controller
 
     public function store(Request $request)
     {
-        $validate = $request->validate([
-            'user_id' => 'required|exist:users,id',
-            'viaje_id' => 'required|exist:viajes,id',
-        ]);
 
-        $reserva = Reserva::create([
-            'user_id' => $request->user_id,
-            'viaje_id' => $request->viaje_id,
-        ]);
+        $reserva = $request->all();
+        $data = Reserva::create($reserva); 
+        
+        $correo = new EnviarDatosViajeMailable($data->user, $data->viaje);    
+        Mail::to('nahuellopez@gmail.com')->send($correo);
 
-        return response()->json(['data' => $reserva]); 
-        /* $compra = $request->all();
-        $data = Reserva::create($compra); 
-
-        return response()->json(['data' => $data]);  */
+        return response()->json(['data' => $data]); 
     }
 
-    public function change($id)
+ /*    public function change($id)
     {
-        /** Retorna 422 en caso de no existir */
         $reserva = Reserva::findOrFail($id);
         $reserva->estado = !$reserva->estado;
         $reserva->update();
 
         return response()->json(['data' => $reserva]);
-    }
+    } */
 
 }

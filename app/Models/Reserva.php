@@ -34,6 +34,7 @@ class Reserva extends Model
         return $this->hasMany(\App\Models\Usuario::class);
     }
 
+
     public function viajes()
     {
         return $this->hasMany(\App\Models\Viaje::class);
@@ -49,8 +50,8 @@ class Reserva extends Model
         return $this->belongsTo(\App\Models\Viaje::class);
     }
 
-    public function scopeAllReservas($query){
+    /* public function scopeAllReservas($query){
         
-    }
+    } */
 
 }
