@@ -50,7 +50,7 @@ class CambiarEstado extends Command
             
            if(($date->greaterThan($now))){
             $asiento->estado = 1; 
-            $asiento->save();
+            $asiento->delete();
            }
 
            }
