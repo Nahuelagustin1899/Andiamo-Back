@@ -13,17 +13,23 @@ class EnviarDatosViajeMailable extends Mailable
 
     public $user;
     public $viaje;
+    public $asiento_reservado;
     public $subject = "Informacion de la reserva";
+    public $qr;
     /**
      * Create a new message instance.
      *
      * @return void
      */
 
-    public function __construct($user,$viaje)
+    public function __construct($user,$viaje,$asiento_reservado)
     {
      $this->user = $user;
      $this->viaje = $viaje;
+     $this->asiento_reservado = $asiento_reservado;
+
+     $this->qr = 'Nombre: '.$user->name.'// Email: '.$user->email.'// Salida :'.$viaje->salida->nombre.'// Destino: '.$viaje->destino->nombre.'// Precio: $'.$viaje->precio.'// Asiento: '.$asiento_reservado;
+
     }
 
 
@@ -34,6 +40,6 @@ class EnviarDatosViajeMailable extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.datos-viajes',['user'=>$this->user,'viaje'=>$this->viaje]);
+        return $this->view('emails.datos-viajes',['user'=>$this->user,'viaje'=>$this->viaje,'qr'=>$this->qr,'asiento_reservado'=>$this->asiento_reservado]);
     }
 }

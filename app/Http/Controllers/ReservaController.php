@@ -33,11 +33,12 @@ class ReservaController extends Controller
 
         $reserva = $request->all();
         $data = Reserva::create($reserva); 
-        
-        $correo = new EnviarDatosViajeMailable($data->user, $data->viaje);    
+        /* return $data->viaje->destino->nombre; */
+        /* return $data->asiento_reservado; */
+         $correo = new EnviarDatosViajeMailable($data->user, $data->viaje,$data->asiento_reservado);    
         Mail::to('nahuellopez@gmail.com')->send($correo);
 
-        return response()->json(['data' => $data]); 
+        return response()->json(['data' => $data]);  
     }
 
  /*    public function change($id)

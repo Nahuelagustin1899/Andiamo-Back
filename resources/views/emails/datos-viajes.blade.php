@@ -40,7 +40,8 @@
       }
       
       #qr{
-        margin-left:2.5em;;
+        margin-left:2.5em;
+        list-style: none;
       }
 
     </style>
@@ -52,20 +53,21 @@
         Tenes 24hs para poder pagar el viaje reservado.
         </p>
       </div>
-    <h1>Información del pasaje comprado</h1>   
+    <h1>Información del pasaje reservado</h1>   
     <hr>
     <ul>
       <li>Nombre : {{$user->name}}</li>
       <li>Usuario : {{$user->email}}</li>
-      <li>Salida : {{$viaje->salida_id}}</li>
-      <li>Destino : {{$viaje->destino_id}}</li>
+      <li>Salida : {{$viaje->salida->nombre}}</li>
+      <li>Destino : {{$viaje->destino->nombre}}</li>
       <li>Precio : ${{$viaje->precio}}</li>
+      <li>Asiento : {{$asiento_reservado}}</li>
 
-      <div id="qr">
-      {!!QrCode::size(150)->color(23, 27, 109)->generate($user->email) !!}
-      </div>
+      <li id="qr">
+      {!!QrCode::size(150)->color(23, 27, 109)->generate($qr) !!}
+      </li>
      
     </ul>
-
+    
 </body>
 </html>
