@@ -48,12 +48,14 @@ class UserController extends Controller
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60,
             'success' => true,
+            
             'user' => [
                 'id' => $user->id,
                 'rol' => $user->rol,
                 'email' => $user->email,
                 'name' => $user->name,
                 'logo' => $user->logo,
+                'token' => $token,
 
             ]
         
