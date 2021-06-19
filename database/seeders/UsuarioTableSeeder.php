@@ -18,7 +18,7 @@ class UsuarioTableSeeder extends Seeder
         User::create([
             'id' => 1,
             'name' => 'Nahuel Lopez',
-            'logo' => 'chevalier.png',
+            'logo' => 'admin.png',
             'rol' => 1,
             'email' => "nahuel@admin.com",
             'password' => Hash::make('asdasd'),

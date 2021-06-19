@@ -3,7 +3,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -28,6 +29,26 @@ class UserController extends Controller
 
 
         return $this->respondWithToken($token);
+    }
+
+    public function edit(Request $request,$id)  
+    {
+        
+        $usuario = User::findOrFail($id);  
+        $data = $request->all();
+        $usuario->update($data);
+
+        return response()->json(['data' => $usuario]);
+    }
+
+    public function registrarse(Request $request)
+    {
+        
+        $data = $request->input();
+        $data ['rol'] = 3;
+        $data['password'] = Hash::make($data['password']);
+        $usuario = User::create($data);  
+        
     }
 
     public function logout(Request $request)

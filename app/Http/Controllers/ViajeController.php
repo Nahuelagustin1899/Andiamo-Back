@@ -39,6 +39,16 @@ class ViajeController extends Controller
         
     }
 
+    public function edit(Request $request,$id)  
+    {
+        
+        $viaje = Viaje::findOrFail($id);  
+        $data = $request->all();
+        $viaje->update($data);
+
+        return response()->json(['data' => $viaje]);
+    }
+
     public function store(Request $request)
     {
         

@@ -60,6 +60,9 @@ Route::delete('/viaje/{id}', [ViajeController::class, 'delete'])
 Route::get('/viaje/show/{id}', [ViajeController::class, 'show'])
     ->name('viaje-show');
 
+Route::put('/viaje/edit/{id}', [ViajeController::class, 'edit'])
+    ->name('viaje-edit');
+
 /* RESERVAS */
 
 Route::get('/reserva/index', [ReservaController::class, 'index'])
@@ -86,6 +89,10 @@ Route::prefix('auth')
             ->name('auth.login');
         Route::post('logout', [UserController::class, 'logout'])
             ->name('auth.logout');
+        Route::post('/registrarse', [UserController::class, 'registrarse'])
+            ->name('/auth.registrarse');
+        Route::put('/editar/{id}', [UserController::class, 'edit'])
+            ->name('auth.edit');
     });
 
 
