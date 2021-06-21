@@ -46,10 +46,14 @@ class UserController extends Controller
 
     public function registrarse(Request $request)
     {
-        
-        $data = $request->all();
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+            'name' => 'required'
+        ]);
 
-        
+
+        $data = $request->all();
         $data ['rol'] = 3;
         $data['password'] = Hash::make($data['password']);
         
