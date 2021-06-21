@@ -63,6 +63,8 @@ class UserController extends Controller
         }
 
         $usuario = User::create($data);  
+
+        return response()->json(['success' => true, 'data' => $usuario]);
         
     }
 
