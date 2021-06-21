@@ -47,6 +47,18 @@ class UserController extends Controller
         $data = $request->input();
         $data ['rol'] = 3;
         $data['password'] = Hash::make($data['password']);
+
+        
+        if(!empty($data['logo'])) {
+            $logo = Image::make($data['logo']);
+            $nombreLogo = Str::slug($data['name']) . File::mimeToExtension($logo->mime());
+            $logo->fit(100, 100, function($constraint) {
+                $constraint->upsize();
+            })->save(public_path('imgs/perfiles/logos/' . $nombreLogo));
+
+            $data['logo'] = $nombreLogo;
+        }
+        
         $usuario = User::create($data);  
         
     }
