@@ -48,9 +48,10 @@ class UserController extends Controller
     {
         
         $data = $request->all();
+
+        
         $data ['rol'] = 3;
         $data['password'] = Hash::make($data['password']);
-
         
         if(!empty($data['logo'])) {
             $logo = Image::make($data['logo']);
@@ -62,8 +63,8 @@ class UserController extends Controller
             $data['logo'] = $nombreLogo;
         }
 
-        $usuario = User::create($data);  
-
+        $usuario = User::create($data);
+        
         return response()->json(['success' => true, 'data' => $usuario]);
         
     }
