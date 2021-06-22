@@ -18,7 +18,7 @@ class ViajeController extends Controller
 
     public function indexEmpresa()
     {
-        $viajes = Viaje::with(['empresa', 'destino', 'salida'])->where('empresa_id', 1)->get();
+        $viajes = Viaje::with(['empresa', 'destino', 'salida'])->where('empresa_id', 5)->get();
         return response()->json(['data' => $viajes]);
         
     }
