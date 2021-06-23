@@ -7,6 +7,8 @@ use App\Models\Viaje;
 use App\Models\Empresa;
 use App\Models\Estacion;
 use App\Http\Requests\ViajeRequest;
+use App\Mail\EditarViaje;
+use Mail;
 
 class ViajeController extends Controller
 {
@@ -45,6 +47,9 @@ class ViajeController extends Controller
         $viaje = Viaje::findOrFail($id);  
         $data = $request->all();
         $viaje->update($data);
+
+        $correo = new EditarViaje($viaje->empresa,$viaje->precio);    
+        Mail::to('nahuellopez@gmail.com')->send($correo);
 
         return response()->json(['data' => $viaje]);
     }
