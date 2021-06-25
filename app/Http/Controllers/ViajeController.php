@@ -27,7 +27,7 @@ class ViajeController extends Controller
 
     public function indexTraerSelect()
     {
-        $viajes = Empresa::all();
+        $viajes = Empresa::where('id',5)->get();
 
         return response()->json(['data' => $viajes]);
         
@@ -48,11 +48,12 @@ class ViajeController extends Controller
         $data = $request->all();
         $viaje->update($data);
 
-        $correo = new EditarViaje($viaje->empresa,$viaje->precio);    
+        $correo = new EditarViaje($viaje->empresa,$viaje,$viaje->salida,$viaje->destino);    
         Mail::to('nahuellopez@gmail.com')->send($correo);
-
         return response()->json(['data' => $viaje]);
+
     }
+    
 
     public function store(Request $request)
     {
