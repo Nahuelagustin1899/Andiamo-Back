@@ -32,6 +32,9 @@ Route::delete('/empresa/{id}', [EmpresaController::class, 'delete'])
 Route::post('/empresa', [EmpresaController::class, 'store'])
     ->name('empresa-store'); 
 
+Route::post('/empresa/editar/{id}', [EmpresaController::class, 'edit'])
+    ->name('empresa-edit'); 
+
 /* ESTACIONES */
 
 Route::get('/estacion/index', [EstacionController::class, 'index'])
@@ -83,18 +86,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('auth')
+
+Route::prefix('/auth')
     ->group(function() {
-        Route::post('login', [UserController::class, 'login'])
+        Route::post('/login', [UserController::class, 'login'])
             ->name('auth.login');
-        Route::post('logout', [UserController::class, 'logout'])
-            ->name('auth.logout');
+        Route::post('/logout', [UserController::class, 'logout'])
+            ->name('/auth.logout');
         Route::post('/registrarse', [UserController::class, 'registrarse'])
             ->name('/auth.registrarse');
-        Route::put('/editar/{id}', [UserController::class, 'edit'])
+        Route::post('/editar/{id}', [UserController::class, 'edit'])
             ->name('auth.edit');
     });
-
-
 
 

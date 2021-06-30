@@ -39,9 +39,21 @@ class UserController extends Controller
         
         $usuario = User::findOrFail($id);  
         $data = $request->all();
-        $usuario->update($data);
 
-        return response()->json(['data' => $usuario]);
+        if($request->logo) {
+            $nombreLogo = date('YmdHis') . "." . $request->logo->extension();
+            $request->file('logo')->move(public_path('imgs/perfiles/logos/'), $nombreLogo);
+            $data['logo'] = $nombreLogo;
+            $imagenActual = $usuario->logo;
+        }   
+ 
+        $usuario->update($data); 
+
+             if(isset($imagenActual) && !empty($imagenActual)) {
+            unlink(public_path('imgs/perfiles/logos/' . $imagenActual));
+            }   
+
+         return response()->json(['data' => $usuario]); 
     }
 
     public function registrarse(Request $request)

@@ -77,5 +77,27 @@ class EmpresaController extends Controller
         ]);
     }
 
+    public function edit(Request $request,$id)  
+    {
+        
+        $empresa = Empresa::findOrFail($id);  
+        $data = $request->all();
+
+         if($request->logo) {
+            $nombreLogo = date('YmdHis') . "." . $request->logo->extension();
+            $request->file('logo')->move(public_path('imgs/empresas/logos/'), $nombreLogo);
+            $data['logo'] = $nombreLogo;
+            $imagenActual = $empresa->logo;
+        }    
+ 
+        $empresa->update($data); 
+
+             if(isset($imagenActual) && !empty($imagenActual)) {
+            unlink(public_path('imgs/empresas/logos/' . $imagenActual));
+            }    
+
+         return response()->json(['data' => $empresa]); 
+    }
+
     
 }
