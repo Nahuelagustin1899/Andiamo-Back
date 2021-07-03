@@ -28,7 +28,7 @@ class ViajesTableSeeder extends Seeder
 
         Viaje::create([
             'id' => 2,
-            'empresa_id' =>3,
+            'empresa_id' =>5,
             'salida_id' =>3,
             'destino_id' =>5,
             'fecha_salida' => "2021-10-22 18:18:18",
@@ -40,7 +40,7 @@ class ViajesTableSeeder extends Seeder
 
         Viaje::create([
             'id' => 3,
-            'empresa_id' =>3,
+            'empresa_id' =>5,
             'salida_id' =>2,
             'destino_id' =>4,
             'fecha_salida' => "2021-10-22 18:18:18",
