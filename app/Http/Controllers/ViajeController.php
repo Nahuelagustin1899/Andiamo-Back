@@ -62,7 +62,7 @@ class ViajeController extends Controller
 
             'destino_id' => 'required|exists:estacions,id',
             'salida_id' => 'required|exists:estacions,id',
-            'empresa_id' => 'required|exists:empresas,id', 
+            /* 'empresa_id' => 'required|exists:empresas,id',  */
             /* 'nombre' => 'required|min:2|max:40',  */
             'precio' => 'required|numeric',
             'fecha_salida' => 'required',
