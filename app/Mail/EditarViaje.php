@@ -13,17 +13,21 @@ class EditarViaje extends Mailable
 
     public $subject = "Informacion del viaje modificado";
     public $empresa;
-    public $precio;
+    public $viaje;
+    public $destino;
+    public $salida;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($empresa,$precio)
+    public function __construct($empresa,$viaje,$destino,$salida)
     {
         $this->empresa = $empresa;
-        $this->precio = $precio;
+        $this->viaje = $viaje;
+        $this->destino = $destino;
+        $this->salida = $salida;
     }
 
     /**
@@ -33,6 +37,6 @@ class EditarViaje extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.editar-pasaje',['empresa'=>$this->empresa, 'precio'=>$this->precio]);
+        return $this->view('emails.editar-pasaje',['empresa'=>$this->empresa, 'viaje'=>$this->viaje,'destino'=>$this->destino,'salida'=>$this->salida]);
     }
 }

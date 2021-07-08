@@ -11,7 +11,22 @@
 
       hr{
           border:2px solid black;
-      }      
+      } 
+
+      #usuario{
+        font-size:1em;
+      }   
+
+      #box{
+        width:80%;
+        margin:auto;
+        display:block;
+        margin-top:2em;
+      } 
+
+      body{
+          background-color:#ffc107;
+      } 
 
     </style>
 
@@ -21,12 +36,22 @@
     <h1>Información del pasaje modificado</h1>   
     <hr>
 
-    <ul>
+    <div id="box">
+    <p id="usuario">Estimado usuario:</p> 
+    
+    <p>Le hacemos llegar por medio de este mail la modificacion del pasaje con salida de <b>{{$salida->nombre}}</b> y con llegada a <b>{{$destino->nombre}}</b></p>
 
-      <li> Empresa: {{$empresa->nombre}}</li>
-      <li> Precio: ${{$precio}}</li>
+    <p><b>Modificaciones:</b></p>  
+
+    <ul>
+      <li>Horario de salida: {{$viaje->fecha_salida}}</li>
+      <li>Horario de llegada: {{$viaje->fecha_llegada}}</li>
+      <li>Precio: {{$viaje->precio}}</li>
     </ul>
-  
+
+    <p>Desde ya muchas gracias. <br/><b>{{$empresa->nombre}}</b></p>  
+
+    </div> 
     
 </body>
 </html>
