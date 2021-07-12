@@ -110,7 +110,7 @@ class UserController extends Controller
                 'email' => $user->email,
                 'name' => $user->name,
                 'logo' => $user->logo,
-                /* 'token' => $token, */
+                'token' => $token,
 
             ]
         
