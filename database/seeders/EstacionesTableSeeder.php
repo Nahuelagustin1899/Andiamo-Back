@@ -16,7 +16,7 @@ class EstacionesTableSeeder extends Seeder
     {
         Estacion::create([
             'id' => 1,
-            'nombre' => "Estación Liniers"
+            'nombre' => "Estación "
         ]);
         Estacion::create([
             'id' => 2,
