@@ -16,27 +16,44 @@ class EstacionesTableSeeder extends Seeder
     {
         Estacion::create([
             'id' => 1,
-            'nombre' => "Estacion Liniers"
+            'nombre' => "Estación Liniers"
         ]);
         Estacion::create([
             'id' => 2,
-            'nombre' => "Estacion Retiro"
+            'nombre' => "Estación Retiro"
         ]);
         Estacion::create([
             'id' => 3,
-            'nombre' => "Estacion Ramos Mejía"
+            'nombre' => "Estación Ramos Mejía"
         ]);
         Estacion::create([
             'id' => 4,
-            'nombre' => "Estacion Mar de Ajó"
+            'nombre' => "Estación Mar de Ajó"
         ]);
         Estacion::create([
             'id' => 5,
-            'nombre' => "Estacion Santa Teresita"
+            'nombre' => "Estación Santa Teresita"
         ]);
         Estacion::create([
             'id' => 6,
-            'nombre' => "Estacion San Clemente"
+            'nombre' => "Estación San Clemente"
         ]);
+        Estacion::create([
+            'id' => 7,
+            'nombre' => "Estación Mar del Tuyú"
+        ]);
+        Estacion::create([
+            'id' => 8,
+            'nombre' => "Estación San Bernardo"
+        ]);
+        Estacion::create([
+            'id' => 9,
+            'nombre' => "Estación Miramar"
+        ]);
+        Estacion::create([
+            'id' => 10,
+            'nombre' => "Estación Villa Gesell"
+        ]);
+        
     }
 }

@@ -30,7 +30,7 @@ class EmpresasTableSeeder extends Seeder
             'id' => 3,
             'nombre' => "Cata",
             'logo' => 'cata.jpg',
-            'informacion' => 'En 1933 nació la Compañía Argentina de Transporte Automóvil (C.A.T.A.), fundada por el Sr. Juan E. Ramoni, ofreciendo el servicio de transporte entre la ciudad de Mendoza y las ciudades de Santiago de Chile y Valparaíso.'
+            'informacion' => 'En 1933 nació la Compañía Argentina de Transporte Automóvil (C.A.T.A.), fundada por el Sr. Juan E. Ramoni, la cual ofrece servicios de transporte.'
         ]);
         Empresa::create([
             'id' => 4,
