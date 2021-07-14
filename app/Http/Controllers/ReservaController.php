@@ -8,18 +8,20 @@ use Mail;
 
 class ReservaController extends Controller
 {
+    /**
+    *@param null
+    *@method retorna todas las empresas
+    *@return json
+    *@author
+    *28-05-2021
+    */
     public function index()
     {   
         /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id)->get(); */
         $reservas = Reserva::with(['user', 'viaje'])->where('user_id', 3)->get();
         return response()->json(['data' => $reservas]);
     }
-
-    public function indexEmpresa()
-    {   
-        $reservas = Reserva::with(['user', 'viaje'])->where('user_id', 2)->get();
-        return response()->json(['data' => $reservas]);
-    }
+    
 
     public function reservasViajes($id)
     {   
