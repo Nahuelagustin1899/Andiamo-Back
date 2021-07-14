@@ -18,7 +18,7 @@ class ReservaController extends Controller
     */
     public function index()
     {   
-        return "Usuario id" . Auth::user()->id;
+        return "Usuario id" . Auth::user();
 
         /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id)->get(); */
         /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', 3)->get(); */
