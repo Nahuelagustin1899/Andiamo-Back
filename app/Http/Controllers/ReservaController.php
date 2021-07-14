@@ -5,6 +5,7 @@ use App\Models\Reserva;
 use Illuminate\Http\Request;
 use App\Mail\EnviarDatosViajeMailable;
 use Mail;
+use Illuminate\Support\Facades\Auth;
 
 class ReservaController extends Controller
 {
