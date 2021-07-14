@@ -82,7 +82,7 @@ class ViajesTableSeeder extends Seeder
             'fecha_salida' => "2021-10-22 19:30:18",
             'fecha_llegada' => "2021-11-22 05:30:20",
             'cantidad_asientos' =>'40',
-            'precio' => 3500
+            'precio' => 3600
 
         ]);
     }
