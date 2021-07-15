@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Reserva;
+use App\Models\Empresa;
 use Illuminate\Http\Request;
 use App\Mail\EnviarDatosViajeMailable;
 use Mail;
@@ -18,6 +19,15 @@ class ReservaController extends Controller
         /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', 3)->get(); */
         return response()->json(['data' => $reservas]);
     }
+
+    public function indexEmpresa()
+    {   
+        
+        $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->first();
+
+        return response()->json(['data' => $reservas]);
+    }
+
     
 
     public function reservasViajes($id)

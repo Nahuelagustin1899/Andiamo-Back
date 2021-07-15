@@ -71,6 +71,9 @@ Route::put('/viaje/edit/{id}', [ViajeController::class, 'edit'])
 Route::get('/reserva/index', [ReservaController::class, 'index'])
     ->name('reserva-index');
 
+Route::get('/reserva/index/empresa', [ReservaController::class, 'indexEmpresa'])
+    ->name('reserva-index-empresa');
+
 Route::post('/reserva/store', [ReservaController::class, 'store'])
     ->name('reserva-store');
 

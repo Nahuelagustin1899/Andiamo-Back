@@ -30,4 +30,11 @@ class Empresa extends Model
     {
         return $this->hasMany(\App\Models\Viaje::class);
     }
+
+    public function reservas()
+    {
+        return $this->hasManyThrough(Reserva::class, Viaje::class);
+      
+    }
+
 }
