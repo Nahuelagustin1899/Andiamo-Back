@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
 
-    'allowed_origins' => ['https://andiamo-viajes.netlify.app'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
