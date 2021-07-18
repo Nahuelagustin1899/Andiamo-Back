@@ -23,7 +23,7 @@ return [
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['https://andiamo-viajes.netlify.app'],
+    'allowed_headers' => ['*'],
 
     'exposed_headers' => [],
 
