@@ -21,9 +21,9 @@ return [
 
     'allowed_origins' => ['https://andiamo-viajes.netlify.app'],
 
-    'allowed_origins_patterns' => ['https://andiamo-viajes.netlify.app'],
+    'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => ['https://andiamo-viajes.netlify.app'],
 
     'exposed_headers' => [],
 
