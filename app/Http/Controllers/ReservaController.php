@@ -23,7 +23,7 @@ class ReservaController extends Controller
     public function indexEmpresa()
     {   
         
-        $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->first();
+        $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->get();
 
         return response()->json(['data' => $reservas]);
     }
