@@ -14,17 +14,10 @@ class ReservaController extends Controller
     public function index()
     {   
         
-        /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get();  */
-/* 
-        try { */
-
             $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->toArray();
             return response()->json(['data' => $reservas]);
           
-         /*  } catch (\Exception $e) {
-          
-              return $e->getMessage();
-          } */
+       
     }
 
     public function indexEmpresa()
