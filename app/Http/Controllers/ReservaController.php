@@ -15,9 +15,16 @@ class ReservaController extends Controller
     {   
         
         /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get();  */
-       
-        $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->toArray();
-        return response()->json(['data' => $reservas]);
+
+        try {
+
+            $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->toArray();
+            return response()->json(['data' => $reservas]);
+          
+          } catch (\Exception $e) {
+          
+              return $e->getMessage();
+          }
     }
 
     public function indexEmpresa()
@@ -32,8 +39,18 @@ class ReservaController extends Controller
 
     public function reservasViajes($id)
     {   
-        $reservas = Reserva::where('viaje_id', $id )->get();
-        return response()->json(['data' => $reservas]);
+        
+        try {
+
+            $reservas = Reserva::where('viaje_id', $id )->get();
+            if(empty($reservas) || $reservas === false ){
+                return response()->json( 'No tengo los datos', 400);
+            }
+            return response()->json($reservas);
+            
+          } catch (\Exception $e) {
+              return response()->json( $e->getMessage(), 500);
+          }
     }
 
     public function store(Request $request)
