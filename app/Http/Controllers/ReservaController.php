@@ -16,8 +16,7 @@ class ReservaController extends Controller
         
         /* $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get();  */
        
-        $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->first();
-        var_export($reservas); die;
+        $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->toArray();
         return response()->json(['data' => $reservas]);
     }
 
