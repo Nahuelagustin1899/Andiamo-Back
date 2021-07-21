@@ -16,10 +16,13 @@ class CreateViajesTable extends Migration
        
 
         Schema::create('viajes', function (Blueprint $table) {
-            $table->id()->startingValue(100);
-            $table->foreignId('empresa_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('salida_id')->constrained('estacions')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('destino_id')->constrained('estacions')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('empresa_id');
+            $table->foreign( 'empresa_id' )->references( 'id' )->on( 'empresas' );
+            $table->unsignedBigInteger('salida_id');
+            $table->foreign( 'salida_id' )->references( 'id' )->on( 'estacions' );
+            $table->unsignedBigInteger('destino_id');
+            $table->foreign( 'destino_id' )->references( 'id' )->on( 'estacions' );
             $table->timestamp('fecha_salida')->nullable();
             $table->timestamp('fecha_llegada')->nullable();
             $table->integer('cantidad_asientos');
