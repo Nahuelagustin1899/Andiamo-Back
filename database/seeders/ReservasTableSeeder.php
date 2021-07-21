@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Reserva;
+use Illuminate\Database\Seeder;
 
 class ReservasTableSeeder extends Seeder
 {
@@ -18,8 +18,7 @@ class ReservasTableSeeder extends Seeder
             'user_id' => 3,
             'viaje_id' => 2,
             'estado' => 0,
-            'asiento_reservado' => '15'
+            'asiento_reservado' => 15,
         ]);
-        
     }
 }

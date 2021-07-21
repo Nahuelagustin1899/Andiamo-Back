@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EstacionesTableSeeder::class);
         $this->call(ViajesTableSeeder::class);
         $this->call(UsuarioTableSeeder::class);
+        $this->call(ReservasTableSeeder::class);
     }
 }
