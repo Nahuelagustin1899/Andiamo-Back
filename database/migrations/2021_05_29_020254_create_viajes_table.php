@@ -13,7 +13,7 @@ class CreateViajesTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+       
 
         Schema::create('viajes', function (Blueprint $table) {
             $table->id();
@@ -27,7 +27,7 @@ class CreateViajesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::enableForeignKeyConstraints();
+        
     }
 
     /**
