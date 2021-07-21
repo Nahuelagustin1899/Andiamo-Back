@@ -13,7 +13,7 @@ class CreateReservasTable extends Migration
      */
     public function up()
     {
-        Schema::disableForeignKeyConstraints();
+        
 
         Schema::create('reservas', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -29,7 +29,7 @@ class CreateReservasTable extends Migration
             $table->timestamps();
         });
 
-        Schema::enableForeignKeyConstraints();
+     
     }
 
     /**
