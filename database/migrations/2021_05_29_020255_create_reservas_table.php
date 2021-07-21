@@ -16,7 +16,7 @@ class CreateReservasTable extends Migration
         Schema::disableForeignKeyConstraints();
 
         Schema::create('reservas', function (Blueprint $table) {
-            $table->bigIncrements();
+            $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('viaje_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->boolean('estado')->default(false);
