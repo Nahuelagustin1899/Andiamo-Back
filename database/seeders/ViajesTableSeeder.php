@@ -14,7 +14,7 @@ class ViajesTableSeeder extends Seeder
      */
     public function run()
     {
-      /*   Viaje::create([
+        Viaje::create([
             'empresa_id' =>1,
             'salida_id' =>1,
             'destino_id' =>6,
@@ -78,6 +78,6 @@ class ViajesTableSeeder extends Seeder
             'cantidad_asientos' =>'40',
             'precio' => 3600
 
-        ]); */
+        ]);
     }
 }
