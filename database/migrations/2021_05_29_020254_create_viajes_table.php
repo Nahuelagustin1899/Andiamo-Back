@@ -16,7 +16,7 @@ class CreateViajesTable extends Migration
         Schema::disableForeignKeyConstraints();
 
         Schema::create('viajes', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements();
             $table->foreignId('empresa_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('salida_id')->constrained('estacions')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('destino_id')->constrained('estacions')->cascadeOnDelete()->cascadeOnUpdate();
