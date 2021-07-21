@@ -15,7 +15,6 @@ class ViajesTableSeeder extends Seeder
     public function run()
     {
         Viaje::create([
-            'id' => 1,
             'empresa_id' =>1,
             'salida_id' =>1,
             'destino_id' =>6,
@@ -27,7 +26,6 @@ class ViajesTableSeeder extends Seeder
         ]);
 
         Viaje::create([
-            'id' => 2,
             'empresa_id' =>5,
             'salida_id' =>3,
             'destino_id' =>5,
@@ -39,7 +37,6 @@ class ViajesTableSeeder extends Seeder
         ]);
 
         Viaje::create([
-            'id' => 3,
             'empresa_id' =>5,
             'salida_id' =>2,
             'destino_id' =>4,
@@ -51,7 +48,6 @@ class ViajesTableSeeder extends Seeder
         ]);
 
         Viaje::create([
-            'id' => 4,
             'empresa_id' =>3,
             'salida_id' =>1,
             'destino_id' =>7,
@@ -63,7 +59,6 @@ class ViajesTableSeeder extends Seeder
         ]);
 
         Viaje::create([
-            'id' => 5,
             'empresa_id' =>4,
             'salida_id' =>3,
             'destino_id' =>7,
@@ -75,7 +70,6 @@ class ViajesTableSeeder extends Seeder
         ]);
 
         Viaje::create([
-            'id' => 6,
             'empresa_id' =>2,
             'salida_id' =>2,
             'destino_id' =>8,

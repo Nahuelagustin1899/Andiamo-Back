@@ -16,7 +16,6 @@ class UsuarioTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'id' => 1,
             'name' => 'Nahuel Lopez',
             'logo' => 'admin.png',
             'rol' => 1,
@@ -25,7 +24,6 @@ class UsuarioTableSeeder extends Seeder
         ]);
 
         User::create([
-            'id' => 2,
             'name' => 'Ruta Atlántica',
             'logo' => 'ruta.jpg',
             'rol' => 2,
@@ -34,7 +32,6 @@ class UsuarioTableSeeder extends Seeder
         ]);
 
         User::create([
-            'id' => 3,
             'name' => 'Carlos Tevez',            
             'logo' => 'tevez.png',
             'rol' => 3,
