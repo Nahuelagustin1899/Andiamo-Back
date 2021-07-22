@@ -67,7 +67,7 @@
       {!!QrCode::size(150)->color(23, 27, 109)->generate($qr) !!}
       </li>
 
-      <img src="./../public/imgs/bus.png" alt="Andiamo autobus">
+      <img src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
      
     </ul>
     
