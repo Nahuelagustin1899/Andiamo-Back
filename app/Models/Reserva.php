@@ -31,23 +31,23 @@ class Reserva extends Model
 
     public function usuarios()
     {
-        return $this->hasMany(\App\Models\Usuario::class);
+        return $this->hasMany(Usuario::class);
     }
 
 
     public function viajes()
     {
-        return $this->hasMany(\App\Models\Viaje::class);
+        return $this->hasMany(Viaje::class);
     }
 
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function viaje()
     {
-        return $this->belongsTo(\App\Models\Viaje::class);
+        return $this->belongsTo(Viaje::class);
     }
 
     /* public function scopeAllReservas($query){

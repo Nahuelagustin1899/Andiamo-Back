@@ -28,6 +28,6 @@ class Estacion extends Model
 
     public function viajes()
     {
-        return $this->hasMany(\App\Models\Viaje::class);
+        return $this->hasMany(Viaje::class);
     }
 }

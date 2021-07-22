@@ -50,7 +50,7 @@
 <body>
       <div id="div1">
         <p>
-        Tenes 24hs para poder pagar el viaje reservado.
+        Tenes 72hs antes del viaje para poder pagar el viaje reservado.
         </p>
       </div>
     <h1>Información del pasaje reservado</h1>   
@@ -66,6 +66,8 @@
       <li id="qr">
       {!!QrCode::size(150)->color(23, 27, 109)->generate($qr) !!}
       </li>
+
+      <img src="./../public/imgs/bus.png" alt="Andiamo autobus">
      
     </ul>
     
