@@ -19,7 +19,7 @@
           margin-top:4px;
       }
       body{
-          background-color:#ffc107;
+          background-color:#f4f4ff;
       }
 
       #div1{
@@ -36,11 +36,13 @@
       p{
         padding:1em;
         text-align:center;
-        color:#ffda6a;
+        color:#fdff8c;
       }
       
       #qr{
         margin-left:2.5em;
+        margin-top:1em;
+        margin-bottom:1em;
         list-style: none;
       }
 
@@ -67,7 +69,7 @@
       {!!QrCode::size(150)->color(23, 27, 109)->generate($qr) !!}
       </li>
 
-      <img width="150" height="50" src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
+      <img width="150" height="150" src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
      
     </ul>
     
