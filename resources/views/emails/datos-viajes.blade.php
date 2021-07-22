@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pasajes</title>
     <style>
+      
       h1 {text-align:center;
       font-weight:bold;}
 
@@ -46,6 +47,10 @@
         list-style: none;
       }
 
+      img{
+        margin-top: 1em;
+      }
+
     </style>
 
 </head>
@@ -69,7 +74,7 @@
       {!!QrCode::size(150)->color(23, 27, 109)->generate($qr) !!}
       </li>
 
-      <img width="150" height="150" src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
+      <img width="200" height="100" src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
      
     </ul>
     

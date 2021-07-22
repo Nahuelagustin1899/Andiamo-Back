@@ -25,8 +25,12 @@
       } 
 
       body{
-          background-color:#ffc107;
-      } 
+          background-color:#f4f4ff;
+      }
+
+      img{
+        margin-top: 1em;
+      }
 
     </style>
 
@@ -39,7 +43,7 @@
     <div id="box">
     <p id="usuario">Estimado usuario:</p> 
     
-    <p>Le hacemos llegar por medio de este mail la modificacion del pasaje con salida de <b>{{$salida->nombre}}</b> y con llegada a <b>{{$destino->nombre}}</b></p>
+    <p>Le hacemos llegar por medio de este mail la modificacion del pasaje de <b>{{$empresa->nombre}}</b> con salida de <b>{{$salida->nombre}}</b> y con llegada a <b>{{$destino->nombre}}</b></p>
 
     <p><b>Modificaciones:</b></p>  
 
@@ -49,7 +53,9 @@
       <li>Precio: {{$viaje->precio}}</li>
     </ul>
 
-    <p>Desde ya muchas gracias. <br/><b>{{$empresa->nombre}}</b></p>  
+    <p>Desde ya muchas gracias. <br/><b>Andiamo</b></p>
+    
+    <img width="200" height="100" src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
 
     </div> 
     
