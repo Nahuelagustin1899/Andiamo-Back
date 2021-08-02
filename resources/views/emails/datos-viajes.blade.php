@@ -57,7 +57,7 @@
 <body>
       <div id="div1">
         <p>
-        Tenes 72hs antes del viaje para poder pagar el viaje reservado.
+        Tenes 72hs antes del viaje para poder pagar tu reserva.
         </p>
       </div>
     <h1>Información del pasaje reservado</h1>   

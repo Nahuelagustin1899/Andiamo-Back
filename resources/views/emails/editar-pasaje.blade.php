@@ -43,7 +43,7 @@
     <div id="box">
     <p id="usuario">Estimado usuario:</p> 
     
-    <p>Le hacemos llegar por medio de este mail la modificacion del pasaje de <b>{{$empresa->nombre}}</b> con salida de <b>{{$salida->nombre}}</b> y con llegada a <b>{{$destino->nombre}}</b></p>
+    <p>Le hacemos llegar por medio de este mail la modificacion del pasaje de <b>{{$empresa->nombre}}</b> con salida de <b>{{$destino->nombre}}</b> y con llegada a <b>{{$salida->nombre}}</b></p>
 
     <p><b>Modificaciones:</b></p>  
 
