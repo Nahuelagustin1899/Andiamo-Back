@@ -74,6 +74,9 @@ Route::get('/reserva/index', [ReservaController::class, 'index'])
 Route::get('/reserva/index/empresa', [ReservaController::class, 'indexEmpresa'])
     ->name('reserva-index-empresa');
 
+Route::get('/reserva/index/admin', [ReservaController::class, 'indexAdmin'])
+    ->name('reserva-index-admin');
+
 Route::post('/reserva/store', [ReservaController::class, 'store'])
     ->name('reserva-store');
 

@@ -28,6 +28,14 @@ class ReservaController extends Controller
         return response()->json(['data' => $reservas]);
     }
 
+    public function indexAdmin()
+    {   
+        
+        $reservas = Empresa::with(['viajes', 'reservas'])->get();
+
+        return response()->json(['data' => $reservas]);
+    }
+
     
 
     public function reservasViajes($id)
