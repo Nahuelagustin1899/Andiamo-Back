@@ -20,5 +20,34 @@ class ReservasTableSeeder extends Seeder
             'estado' => 0,
             'asiento_reservado' => 15,
         ]);
+
+        Reserva::create([
+            'user_id' => 3,
+            'viaje_id' => 1,
+            'estado' => 0,
+            'asiento_reservado' => 18,
+        ]);
+
+        Reserva::create([
+            'user_id' => 4,
+            'viaje_id' => 1,
+            'estado' => 0,
+            'asiento_reservado' => 2,
+        ]);
+
+        Reserva::create([
+            'user_id' => 5,
+            'viaje_id' => 1,
+            'estado' => 0,
+            'asiento_reservado' => 19,
+        ]);
+
+        Reserva::create([
+            'user_id' => 6,
+            'viaje_id' => 1,
+            'estado' => 0,
+            'asiento_reservado' => 6,
+        ]);
+
     }
 }
