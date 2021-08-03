@@ -29,22 +29,22 @@ class ReservasTableSeeder extends Seeder
         ]);
 
         Reserva::create([
-            'user_id' => 4,
-            'viaje_id' => 1,
+            'user_id' => 3,
+            'viaje_id' => 4,
             'estado' => 0,
             'asiento_reservado' => 2,
         ]);
 
         Reserva::create([
-            'user_id' => 5,
-            'viaje_id' => 1,
+            'user_id' => 3,
+            'viaje_id' => 5,
             'estado' => 0,
             'asiento_reservado' => 19,
         ]);
 
         Reserva::create([
-            'user_id' => 6,
-            'viaje_id' => 1,
+            'user_id' => 3,
+            'viaje_id' => 6,
             'estado' => 0,
             'asiento_reservado' => 6,
         ]);
