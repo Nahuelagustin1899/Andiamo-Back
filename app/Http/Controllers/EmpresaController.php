@@ -11,14 +11,17 @@ use Intervention\Image\Facades\Image;
 
 class EmpresaController extends Controller
 {
-  
+    
+    /* Traer empresas */
+
     public function index()
     {
         $empresas = Empresa::all();
         return response()->json(['data' => $empresas]);
     }
 
-  
+    /* Eliminar empresas */
+
     public function delete($id)
     {
         $empresa = Empresa::findOrFail($id);
@@ -29,6 +32,7 @@ class EmpresaController extends Controller
 
     }
 
+    /* Crear empresas */
   
     public function store(Request $request)
     {
@@ -58,6 +62,8 @@ class EmpresaController extends Controller
             'data' => $empresa
         ]);
     }
+
+    /* Editar empresas */
 
     public function edit(Request $request,$id)  
     {

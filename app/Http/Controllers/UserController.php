@@ -11,6 +11,9 @@ use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
+
+    /* Login */
+
     public function login(Request $request)
     {
         $request->validate([
@@ -34,6 +37,8 @@ class UserController extends Controller
         return $this->respondWithToken($token);
     }
 
+    /* Editar perfil */
+
     public function edit(Request $request,$id)  
     {
         
@@ -55,6 +60,8 @@ class UserController extends Controller
 
          return response()->json(['data' => $usuario]); 
     }
+
+    /* Registrar usuario */
 
     public function registrarse(Request $request)
     {
@@ -84,6 +91,8 @@ class UserController extends Controller
         return response()->json(['success' => true, 'data' => $usuario]);
         
     }
+
+    /* Logout */
 
     public function logout(Request $request)
     {   

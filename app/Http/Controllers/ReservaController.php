@@ -10,15 +10,18 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservaController extends Controller
 {
-    
+    /* Trae las reservas de los usuarios logueados */
+
     public function index()
     {   
         
-            $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->toArray();
-            return response()->json(['data' => $reservas]);
-          
-       
+        $reservas = Reserva::with(['user', 'viaje'])->where('user_id', auth()->id())->get()->toArray();
+        
+        return response()->json(['data' => $reservas]);
+               
     }
+
+    /* Trae las reservas de sus viajes de la empresa "5" */
 
     public function indexEmpresa()
     {   
@@ -28,6 +31,8 @@ class ReservaController extends Controller
         return response()->json(['data' => $reservas]);
     }
 
+    /* Trae todas las reservas */
+
     public function indexAdmin()
     {   
         
@@ -36,15 +41,17 @@ class ReservaController extends Controller
         return response()->json(['data' => $reservas]);
     }
 
-    
+    /* Cada viaje tiene sus asientos */
 
     public function reservasViajes($id)
     {   
         $reservas = Reserva::where('viaje_id', $id )->get();
+
         return response()->json(['data' => $reservas]);
-        
-     
+          
     }
+
+    /* Reservar asiento disponible */
 
     public function store(Request $request)
     {

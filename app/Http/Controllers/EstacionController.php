@@ -8,14 +8,8 @@ use Illuminate\Http\Request;
 
 class EstacionController extends Controller
 {
+    /* Trae las estaciones */
 
-    /**
-    *@param null
-    *@method retorna todas las estaciones
-    *@return json
-    *@author
-    *28-05-2021
-    */
     public function index()
     {
         $estaciones = Estacion::all();

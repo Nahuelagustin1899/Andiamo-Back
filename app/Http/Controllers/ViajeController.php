@@ -12,11 +12,15 @@ use Mail;
 
 class ViajeController extends Controller
 {
+    /* Trae todos los viajes */
+
     public function index()
     {
         $viajes = Viaje::with(['empresa', 'destino', 'salida'])->get();
         return response()->json(['success' => true,'data' => $viajes]);
     }
+
+    /* Trae los viajes de la empresa "5" */
 
     public function indexEmpresa()
     {
@@ -24,6 +28,8 @@ class ViajeController extends Controller
         return response()->json(['data' => $viajes]);
         
     }
+
+    /* Trae la empresa nro 5 para crear viajes */
 
     public function indexTraerSelect()
     {
@@ -33,6 +39,8 @@ class ViajeController extends Controller
         
     }
 
+    /* Trae todas las estaciones */
+
     public function indexTraerSelect2()
     {
         $viajes = Estacion::all();
@@ -40,6 +48,8 @@ class ViajeController extends Controller
         return response()->json(['data' => $viajes]);
         
     }
+
+    /* Edita los viajes */
 
     public function edit(Request $request,$id)  
     {
@@ -53,6 +63,8 @@ class ViajeController extends Controller
         return response()->json(['data' => $viaje]);
 
     }
+
+    /* Crea viajes */
     
 
     public function store(Request $request)
@@ -75,6 +87,8 @@ class ViajeController extends Controller
         return response()->json(['success' => true,'data' => $viaje]);
     }
 
+    /* Elimina viajes */
+
     public function delete($id)
     {
         $viaje = Viaje::findOrFail($id);
@@ -84,11 +98,11 @@ class ViajeController extends Controller
         return response()->json(['success' => true, 'data' => $viaje]);
     }
 
-    public function show($id)
+   /*  public function show($id)
     {
         $viaje = Viaje::findOrFail($id);
 
         return response()->json($viaje, 200);
-    }
+    } */
 
 }
