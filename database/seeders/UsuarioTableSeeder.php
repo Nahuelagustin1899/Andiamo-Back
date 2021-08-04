@@ -16,10 +16,10 @@ class UsuarioTableSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'Nahuel Lopez',
-            'logo' => 'admin.png',
+            'name' => 'Administrador Andiamo',
+            'logo' => 'andiamo.png',
             'rol' => 1,
-            'email' => "nahuel@admin.com",
+            'email' => "andiamo@admin.com",
             'password' => Hash::make('asdasd'),
         ]);
 
@@ -32,10 +32,10 @@ class UsuarioTableSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Carlos Tevez',            
-            'logo' => 'tevez.png',
+            'name' => 'Martin Vilas',            
+            'logo' => 'usuario1.jpg',
             'rol' => 3,
-            'email' => "carlos@tevez.com",
+            'email' => "martin@vilas.com",
             'password' => Hash::make('asdasd'),
         ]);
     }
