@@ -50,8 +50,6 @@ class Reserva extends Model
         return $this->belongsTo(Viaje::class);
     }
 
-    /* public function scopeAllReservas($query){
-        
-    } */
+  
 
 }
