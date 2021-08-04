@@ -54,18 +54,11 @@ class ReservaController extends Controller
         /* return $data->viaje->destino->nombre; */
         /* return $data->asiento_reservado; */
          $correo = new EnviarDatosViajeMailable($data->user, $data->viaje,$data->asiento_reservado);    
-        Mail::to('nahuellopez@gmail.com')->send($correo);
+        Mail::to('martin@vilas.com')->send($correo);
 
         return response()->json(['data' => $data]);  
     }
 
- /*    public function change($id)
-    {
-        $reserva = Reserva::findOrFail($id);
-        $reserva->estado = !$reserva->estado;
-        $reserva->update();
 
-        return response()->json(['data' => $reserva]);
-    } */
 
 }

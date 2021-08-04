@@ -49,7 +49,7 @@ class ViajeController extends Controller
         $viaje->update($data);
 
         $correo = new EditarViaje($viaje->empresa,$viaje,$viaje->salida,$viaje->destino);    
-        Mail::to('nahuellopez@gmail.com')->send($correo);
+        Mail::to('martin@vilas.com')->send($correo);
         return response()->json(['data' => $viaje]);
 
     }
