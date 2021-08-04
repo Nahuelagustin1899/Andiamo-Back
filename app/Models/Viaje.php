@@ -41,17 +41,17 @@ class Viaje extends Model
 
     public function empresa()
     {
-        return $this->belongsTo(\App\Models\Empresa::class);
+        return $this->belongsTo(Empresa::class);
     }
 
     public function salida()
     {
-        return $this->belongsTo(\App\Models\Estacion::class);
+        return $this->belongsTo(Estacion::class);
     }
 
     public function destino()
     {
-        return $this->belongsTo(\App\Models\Estacion::class);
+        return $this->belongsTo(Estacion::class);
     }
     
 }

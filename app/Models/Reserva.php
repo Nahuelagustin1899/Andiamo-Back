@@ -29,7 +29,7 @@ class Reserva extends Model
     ];
 
 
-    public function usuarios()
+    /* public function usuarios()
     {
         return $this->hasMany(Usuario::class);
     }
@@ -38,7 +38,7 @@ class Reserva extends Model
     public function viajes()
     {
         return $this->hasMany(Viaje::class);
-    }
+    } */
 
     public function user()
     {
