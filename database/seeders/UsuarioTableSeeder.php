@@ -17,7 +17,7 @@ class UsuarioTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Administrador Andiamo',
-            'logo' => 'andiamo.png',
+            'logo' => 'bus.jpg',
             'rol' => 1,
             'email' => "andiamo@admin.com",
             'password' => Hash::make('asdasd'),
