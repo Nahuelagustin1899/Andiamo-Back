@@ -26,7 +26,7 @@ class ReservaController extends Controller
     public function indexEmpresa()
     {   
         
-        $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->get();
+        $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->orderBy('reservas.asiento_reservado')->get();
 
         return response()->json(['data' => $reservas]);
     }
