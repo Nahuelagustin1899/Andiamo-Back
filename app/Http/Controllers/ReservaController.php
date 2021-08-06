@@ -33,7 +33,7 @@ class ReservaController extends Controller
             ->join( 'viajes as v', 'v.empresa_id', '=', 'empresas.id' )
             ->join( 'reservas as r', 'v.id', '=', 'r.viaje_id' )
             ->where( 'empresas.id', 5 )
-            ->orderBy( 'v.asiento_reservado' )->get();
+            ->orderBy( 'r.asiento_reservado' )->get();
 
         return response()->json(['data' => $reservas]);
     }
