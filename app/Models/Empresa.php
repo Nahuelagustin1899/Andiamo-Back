@@ -33,7 +33,7 @@ class Empresa extends Model
 
     public function reservas()
     {
-        return $this->hasManyThrough(Reserva::class, Viaje::class)->orderBy('asiento_reservado');
+        return $this->hasManyThrough(Reserva::class, Viaje::class);
       
     }
 
