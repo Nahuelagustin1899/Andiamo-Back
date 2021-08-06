@@ -30,7 +30,7 @@ class ReservaController extends Controller
 
        $reservas = Empresa::with( [ 'viajes', 'reservas' ] )
             ->select( 'empresas.*', 'v.asiento_reservado' )
-            ->join( 'viaje as v', 'v.empresa_id', '=', 'empresas.id' )
+            ->join( 'viajes as v', 'v.empresa_id', '=', 'empresas.id' )
             ->join( 'reservas as r', 'v.id', '=', 'r.viaje_id' )
             ->where( 'empresas.id', 5 )
             ->orderBy( 'v.asiento_reservado' )->get();
