@@ -25,21 +25,12 @@ class ReservaController extends Controller
 
     public function indexEmpresa()
     {   
-       $reservas =  Reserva::with( [ 'viaje' ] )
+      /*  $reservas =  Reserva::with( [ 'viaje' ] )
         ->join( 'viaje as v', 'v.id', '=', 'reservas.viaje_id' )
         ->where( 'v.empresa_id', 5 )
-        ->orderBy( 'reservas.asiento_reservado' )->get();
+        ->orderBy( 'reservas.asiento_reservado' )->get(); */
 
-       /*  $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->get();
-
-        $reservas[ 0 ]->reservas = $reservas[ 0 ]->reservas->sortBy( 'asiento_reservado' ); */
-
-       /* $reservas = Empresa::with( [ 'viajes', 'reservas' ] )
-            ->select( 'empresas.*', 'r.asiento_reservado' )
-            ->join( 'viajes as v', 'v.empresa_id', '=', 'empresas.id' )
-            ->join( 'reservas as r', 'v.id', '=', 'r.viaje_id' )
-            ->where( 'empresas.id', 5 )
-            ->orderBy( 'r.asiento_reservado' )->get(); */
+        $reservas = Empresa::with(['viajes', 'reservas'])->where('id', 5)->get();
 
         return response()->json(['data' => $reservas]);
     }
