@@ -25,19 +25,26 @@
       } 
 
       body{
-          background-color:#ffc107;
+        background-color:#f4f4ff;
       } 
+
+      img{
+        margin-top: 1em;
+      }
 
     </style>
 
 </head>
 <body>
       
-    <h1>Código de contraseña</h1>   
+    <h1>Recuperar contraseña</h1>   
     <hr>
 
     <div id="box">
-    <p id="usuario">{{$random}}</p> 
+
+    <p id="usuario">Recibimos tu petición de que olvidaste tu contraseña. Te dejamos el código: <b>{{$random}} </b>para que puedas restablecer tu contraseña. </p> 
+
+    <img width="200" height="100" src="{{url("imgs/bus.png")}}" alt="Autobus andiamo">
 
     </div> 
     
