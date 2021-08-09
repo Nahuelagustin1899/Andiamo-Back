@@ -103,6 +103,74 @@ class UserController extends Controller
         ])->withCookie('token', null, time() - 3600, '/', null, false, true);
     }
 
+    public function codigo(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user){
+            return response()->json([
+             'message' => 'Usuario no existe',
+             'status_code' => 401
+            ], 401);
+            
+        } else{
+
+            $random = rand(111111, 999999);
+            $user->verification_code = $random;
+            $user->save();
+
+            $correo = new CodigoContraseña($random);    
+            Mail::to('nahuellopez@gmail.com')->send($correo);
+
+            return response()->json([
+                'message' => 'Email enviado con éxito',
+                'status_code' => 200
+               ], 200);
+
+        }
+    }
+
+    public function passwordNew(Request $request)
+    {
+       /*  dd(request()->all()); */
+
+        $request->validate([
+            'email' => 'required|email',
+            'verification_code' => 'required|integer',
+            'password' => 'required|min:6'
+        ]);
+
+        $user = User::where('email', $request->email)->where('verification_code', $request->verification_code)->first();
+
+        /* dd($user); */
+        if (!$user){
+
+            return response()->json([
+             'message' => 'User / código invalido',
+             'status_code' => 401
+            ], 401);
+
+        } else{
+
+            $user->password =  Hash::make($user->password);
+            $user->verification_code = null;
+            $user->save();
+            
+           
+            return response()->json([
+                'message' => 'Contraseña cambiada',
+                'status_code' => 200
+               ], 200);
+
+            }
+
+        
+    }
+
   
 
     public function respondWithToken($token)

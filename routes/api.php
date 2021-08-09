@@ -91,6 +91,10 @@ Route::prefix('/auth')
             ->name('/auth.registrarse');
         Route::post('/editar/{id}', [UserController::class, 'edit'])
             ->name('auth.edit');
+        Route::post('/codigo', [UserController::class, 'codigo'])
+            ->name('/auth.codigo');
+        Route::post('/passwordNew',  [UserController::class, 'passwordNew'] )
+            ->name('/auth.passwordNew');
     });
 
 
