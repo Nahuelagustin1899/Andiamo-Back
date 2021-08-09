@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Helpers\File;
 use Illuminate\Support\Str;
 use Intervention\Image\Facades\Image;
+use Mail;
+use App\Mail\CodigoContraseña;
 
 class UserController extends Controller
 {
