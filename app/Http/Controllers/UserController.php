@@ -29,7 +29,7 @@ class UserController extends Controller
         ];
 
         
-        if(! $token = auth()->attempt($credentials)) {
+        if(!    $token = auth()->attempt($credentials)) {
             return response()->json([
                 'success' => false
             ], 401);
@@ -158,7 +158,7 @@ class UserController extends Controller
 
         } else{
 
-            $user->password =  Hash::make($user->password);
+            $user->password =  Hash::make( $request->password );
             $user->verification_code = null;
             $user->save();
             
