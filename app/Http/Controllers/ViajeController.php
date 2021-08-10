@@ -95,6 +95,9 @@ class ViajeController extends Controller
 
         $viaje->delete();
 
+        $correo = new EditarViaje($viaje->empresa,$viaje,$viaje->salida,$viaje->destino);    
+        Mail::to('martin@vilas.com')->send($correo);
+
         return response()->json(['success' => true, 'data' => $viaje]);
     }
 
