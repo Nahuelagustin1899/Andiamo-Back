@@ -25,7 +25,7 @@ class EmpresaController extends Controller
     public function delete($id)
     {
         $empresa = Empresa::findOrFail($id);
-        dd($id);
+        /* dd($id); */
 
         $empresa->delete();
 
