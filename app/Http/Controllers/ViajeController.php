@@ -8,6 +8,7 @@ use App\Models\Empresa;
 use App\Models\Estacion;
 use App\Http\Requests\ViajeRequest;
 use App\Mail\EditarViaje;
+use App\Mail\BorrarPasaje;
 use Mail;
 
 class ViajeController extends Controller
@@ -95,7 +96,7 @@ class ViajeController extends Controller
 
         $viaje->delete();
 
-        $correo = new EditarViaje($viaje->empresa,$viaje,$viaje->salida,$viaje->destino);    
+        $correo = new BorrarPasaje($viaje->empresa,$viaje,$viaje->salida,$viaje->destino);    
         Mail::to('martin@vilas.com')->send($correo);
 
         return response()->json(['success' => true, 'data' => $viaje]);
