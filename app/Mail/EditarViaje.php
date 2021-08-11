@@ -11,7 +11,7 @@ class EditarViaje extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Informacion del viaje modificado";
+    public $subject = "Información del viaje modificado";
     public $empresa;
     public $viaje;
     public $destino;

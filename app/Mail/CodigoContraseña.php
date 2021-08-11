@@ -12,7 +12,7 @@ class CodigoContraseña extends Mailable
     use Queueable, SerializesModels;
 
     
-    public $subject = "Codigo contraseña";
+    public $subject = "Código para restrablecer contraseña";
     /**
      * Create a new message instance.
      *

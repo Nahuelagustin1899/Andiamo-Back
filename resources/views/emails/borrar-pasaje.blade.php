@@ -37,7 +37,7 @@
 </head>
 <body>
       
-    <h1>Pasaje borrado</h1>   
+    <h1>Pasaje eliminado</h1>   
     <hr>
 
     <div id="box">

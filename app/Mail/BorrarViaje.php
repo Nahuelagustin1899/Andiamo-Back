@@ -11,7 +11,7 @@ class BorrarViaje extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = "Borrar viaje";
+    public $subject = "Pasaje eliminado";
     public $empresa;
     public $viaje;
     public $destino;

@@ -14,7 +14,7 @@ class EnviarDatosViajeMailable extends Mailable
     public $user;
     public $viaje;
     public $asiento_reservado;
-    public $subject = "Informacion de la reserva";
+    public $subject = "Información de la reserva";
     public $qr;
     /**
      * Create a new message instance.
