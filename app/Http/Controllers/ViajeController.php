@@ -95,6 +95,9 @@ class ViajeController extends Controller
 
         $viaje->delete();
 
+        $correo = new BorrarViaje($viaje->empresa);    
+        Mail::to('nahuellopez@gmail.com')->send($correo);
+
         return response()->json(['success' => true, 'data' => $viaje]);
     }
 
