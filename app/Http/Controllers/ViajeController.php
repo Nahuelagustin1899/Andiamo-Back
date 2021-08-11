@@ -8,6 +8,8 @@ use App\Models\Empresa;
 use App\Models\Estacion;
 use App\Http\Requests\ViajeRequest;
 use App\Mail\EditarViaje;
+use App\Mail\BorrarViaje;
+
 use Mail;
 
 class ViajeController extends Controller
