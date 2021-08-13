@@ -126,7 +126,7 @@ class UserController extends Controller
             $user->save();
 
             $correo = new CodigoContraseña($random);    
-            Mail::to('nahuellopez@gmail.com')->send($correo);
+            Mail::to('nahuel@lopez.com')->send($correo);
 
             return response()->json([
                 'message' => 'Email enviado con éxito',

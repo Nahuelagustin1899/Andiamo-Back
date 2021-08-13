@@ -65,7 +65,7 @@ class ReservaController extends Controller
         /* return $data->viaje->destino->nombre; */
         /* return $data->asiento_reservado; */
          $correo = new EnviarDatosViajeMailable($data->user, $data->viaje,$data->asiento_reservado);    
-        Mail::to('martin@vilas.com')->send($correo);
+        Mail::to('nahuel@lopez.com')->send($correo);
 
         return response()->json(['data' => $data]);  
     }
