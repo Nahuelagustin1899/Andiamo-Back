@@ -43,7 +43,8 @@
     <div id="box">
     <p id="usuario">Estimado usuario:</p> 
     
-    <p>Por medio de este mail le hacemos conocer el retiro del pasaje de la <b>{{$empresa->nombre}}</b> con salida de <b>{{$destino->nombre}}</b> y con llegada a <b>{{$salida->nombre}}</b></p>
+    <p>Por medio de este mail le hacemos conocer el retiro del pasaje de la <b>{{$empresa->nombre}}</b> con salida de <b>{{$destino->nombre}}</b> y con llegada a <b>{{$salida->nombre}}.</b></p>
+    <p>La empresa se va estar contactando lo más pronto posible.</p>
 
     <p><b>Detalle del pasaje eliminado:</b></p>  
 
